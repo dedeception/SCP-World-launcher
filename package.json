@@ -1,6 +1,6 @@
 {
-  "name": "nezolialauncher",
-  "version": "0.0.2",
+  "name": "scpworldlauncher",
+  "version": "0.0.3",
   "productName": "SCP WORLD Launcher",
   "description": "Modded Minecraft Launcher",
   "author": "Dedeception (https://geek-heberg.eu)",
@@ -48,6 +48,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ulyssedu45/Nezolia-Launcher.git"
+    "url": "git+https://github.com/dedeception/SCP-World-launcher.git"
   }
 }
