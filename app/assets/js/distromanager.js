@@ -1,6 +1,7 @@
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 const fs = require('fs')
 const path = require('path')
-const request = require('request')
+const request = require('request').defaults({strictSSL: false})
 
 const ConfigManager = require('./configmanager')
 const logger        = require('./loggerutil')('%c[DistroManager]', 'color: #a02d2a; font-weight: bold')
@@ -537,10 +538,11 @@ exports.pullRemote = function(){
         return exports.pullLocal()
     }
     return new Promise((resolve, reject) => {
-        const distroURL = 'https://download.nezolia.fr/distribution.json'
+        const distroURL = 'https://rss.scpworld.worldofentaria.eu/webroot/scpworld/distribution.json'
         const opts = {
             url: distroURL,
-            timeout: 2500
+            timeout: 2500,
+            method: 'GET'
         }
         const distroDest = path.join(ConfigManager.getLauncherDirectory(), 'distribution.json')
         request(opts, (error, resp, body) => {
