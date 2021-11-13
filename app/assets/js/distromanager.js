@@ -538,7 +538,7 @@ exports.pullRemote = function(){
         return exports.pullLocal()
     }
     return new Promise((resolve, reject) => {
-        const distroURL = 'https://rss.scpworld.worldofentaria.eu/webroot/scpworld/distribution.json'
+        const distroURL = 'https://rss.scpworld.worldofentaria.eu/webroot/distribution.json'
         const opts = {
             url: distroURL,
             timeout: 2500,
