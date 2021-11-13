@@ -1304,7 +1304,7 @@ class AssetGuard extends EventEmitter {
             if(!fs.existsSync(assetIndexLoc) || force){
                 console.log('Downloading ' + versionData.id + ' asset index.')
                 fs.ensureDirSync(indexPath)
-                const stream = request(assetIndex.url).timeout(0).pipe(fs.createWriteStream(assetIndexLoc))
+                const stream = request(assetIndex.url).pipe(fs.createWriteStream(assetIndexLoc))
                 stream.on('finish', () => {
                     data = JSON.parse(fs.readFileSync(assetIndexLoc, 'utf-8'))
                     self._assetChainValidateAssets(versionData, data).then(() => {
